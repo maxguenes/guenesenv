@@ -1,0 +1,20 @@
+#/bin/sh
+
+SESSION_NAME=Guake
+
+tmux has-session -t $SESSION_NAME 2>/dev/null
+
+if [ $? != 0 ]; then
+    # Set up your session
+    tmux -u new-session -d -s "$SESSION_NAME" -n "Home" -c ~
+    tmux -u new-window -n btop -c ~ btop
+    tmux -u new-window -n Spotify -c ~ spotifycli
+    
+    tmux source ~/.tmux.conf
+
+    tmux select-window -t Home
+    tmux send-keys 'fastfetch' C-m
+fi
+
+# Attach to created session
+tmux -u attach-session -t $SESSION_NAME
