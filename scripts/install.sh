@@ -8,9 +8,26 @@ echo "Using distro: $DISTRO"
 
 if [[ $DISTRO =~ "Ubuntu" ]]; then
    echo "Installing Ubuntu packages"
-   apt-get install --yes neovim btop tmux git curl python3-dev postgresql-client nodejs zsh fzf guake xclip stow wget
+   apt-get install --yes \
+      neovim \
+      btop \
+      tmux \
+      git \
+      curl \
+      python3-dev \
+      python3-debugpy \
+      postgresql-client \
+      nodejs \
+      zsh \
+      fzf \
+      guake \
+      xclip \
+      stow \
+      wget \
+      fd-find
+      
    snap install spotify dbeaver-ce
-   pip install --user spotify-cli-linux awscli awscli-local
+   # pip install --user spotify-cli-linux awscli awscli-local
 
    source $BASEDIR/installers/docker.sh
    source $BASEDIR/installers/fastfetch.sh
