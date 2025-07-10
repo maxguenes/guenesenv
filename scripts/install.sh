@@ -24,7 +24,8 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
       xclip \
       stow \
       wget \
-      fd-find
+      fd-find \
+      ripgrep
       
    snap install spotify dbeaver-ce
    # pip install --user spotify-cli-linux awscli awscli-local

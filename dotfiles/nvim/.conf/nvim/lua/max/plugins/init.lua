@@ -162,25 +162,25 @@ return {
       },
     },
   },
-  {
-    "nvimtools/none-ls.nvim",
-    ft = { "python" },
-    opts = function()
-      return require "max.configs.none-ls"
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "black",
-        "debugpy",
-        "mypy",
-        "ruff-lsp",
-        "pyright",
-      },
-    },
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   ft = { "python" },
+  --   opts = function()
+  --     return require "max.configs.none-ls"
+  --   end,
+  -- },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "black",
+  --       "debugpy",
+  --       "mypy",
+  --       "ruff-lsp",
+  --       "pyright",
+  --     },
+  --   },
+  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -244,10 +244,10 @@ return {
     event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
-      { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "[v]env [s]elector" },
+      { "<leader>Vs", "<cmd>VenvSelect<cr>", desc = "[v]env [s]elector" },
       -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "[v]env [c]ached" },
-      { "<leader>vC", "<cmd>VenvSelectCurrent<cr>", desc = "[v]env show [C]urrent" },
+      { "<leader>Vc", "<cmd>VenvSelectCached<cr>", desc = "[v]env [c]ached" },
+      { "<leader>VC", "<cmd>VenvSelectCurrent<cr>", desc = "[v]env show [C]urrent" },
     },
   },
   {
@@ -274,5 +274,12 @@ return {
         },
       }
     end,
+  },
+  {
+    "ckipp01/nvim-jenkinsfile-linter",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
 }

@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "gruvbox",
+  theme = "catppuccin",
   transparency = false,
   integrations = { "dap" },
   hl_override = {
@@ -62,6 +62,9 @@ M.nvdash = {
 M.ui = {
   tabufline = {
     lazyload = false,
+  },
+  telescope = {
+    style = "bordered", -- borderless / bordered
   },
 }
 

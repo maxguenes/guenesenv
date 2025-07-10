@@ -1,10 +1,11 @@
 local options = {
+  log_level = vim.log.levels.DEBUG,
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
     python = { "isort", "black" },
-    -- c = { "clang-format" },
+    groovy = { "npm-groovy-lint" },
     -- cpp = { "clang-format" },
     -- go = { "gofumpt", "goimports-reviser", "golines" },
     -- haskell = { "fourmolu", "stylish-haskell" },
@@ -46,7 +47,7 @@ local options = {
       prepend_args = {
         "--fast",
         "--line-length",
-        "80",
+        "120",
       },
     },
     isort = {

@@ -1,6 +1,6 @@
 require("venv-selector").setup {
   -- Your options go here
-  -- name = "venv",
+  name = { "venv", ".venv" },
   dap_enabled = true,
   auto_refresh = false,
   stay_on_this_version = true,
