@@ -29,7 +29,6 @@ require("lazy").setup({
   },
 
   { import = "plugins" },
-  { import = "max.plugins" },
 }, lazy_config)
 
 -- load theme

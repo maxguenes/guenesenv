@@ -1,4 +1,6 @@
-function LoadClosesPythonModule(executable_name)
+local utils = {}
+
+function utils.load_python_executable(executable_name)
   -- Return the path to the executable if $VIRTUAL_ENV is set and the binary exists somewhere beneath the $VIRTUAL_ENV path, otherwise get it from Mason
   if vim.env.VIRTUAL_ENV then
     local paths = vim.fn.glob(vim.env.VIRTUAL_ENV .. "/**/bin/" .. executable_name, true, true)
@@ -58,6 +60,4 @@ function LoadClosesPythonModule(executable_name)
   return mason_path
 end
 
-return {
-  LoadClosesPythonModule,
-}
+return utils
