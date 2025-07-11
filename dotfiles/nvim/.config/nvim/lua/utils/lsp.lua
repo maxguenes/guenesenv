@@ -115,10 +115,14 @@ lsp.servers = {
   --     },
   --   },
   -- },
-  jsonls = {},
+  jsonls = {
+    -- filetypes = { "json", "jsonc" },
+  },
   sqlls = {},
-  terraformls = {},
-  yamlls = {},
+  -- terraformls = {},
+  yamlls = {
+    -- filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" },
+  },
   bashls = {
     filetypes = { "bash", "sh" },
     settings = {
