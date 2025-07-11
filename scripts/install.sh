@@ -16,6 +16,7 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
       curl \
       python3-dev \
       python3-debugpy \
+      openjdk-21-jdk \
       postgresql-client \
       nodejs \
       zsh \
