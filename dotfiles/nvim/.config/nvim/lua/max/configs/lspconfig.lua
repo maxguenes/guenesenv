@@ -150,7 +150,14 @@ local servers = {
   sqlls = {},
   terraformls = {},
   yamlls = {},
-  bashls = {},
+  bashls = {
+    filetypes = { "bash", "sh" },
+    settings = {
+      bashIde = {
+        globPattern = "*@(.sh|.inc|.bash|.command)",
+      },
+    },
+  },
   dockerls = {},
   docker_compose_language_service = {},
   groovyls = {
@@ -176,6 +183,7 @@ vim.list_extend(ensure_installed, {
   "debugpy",
   "mypy",
   "npm-groovy-lint",
+  "shfmt",
   -- "ruff-lsp",
 })
 require("mason-tool-installer").setup {

@@ -6,10 +6,12 @@ local options = {
     html = { "prettier" },
     python = { "isort", "black" },
     groovy = { "npm-groovy-lint" },
+    bash = { "shfmt", "shellcheck" },
+    zsh = { "shfmt", "shellcheck" },
+    sh = { "shfmt", "shellcheck" },
     -- cpp = { "clang-format" },
     -- go = { "gofumpt", "goimports-reviser", "golines" },
     -- haskell = { "fourmolu", "stylish-haskell" },
-    -- python = { "isort", "black" },
   },
 
   formatters = {
