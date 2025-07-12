@@ -8,7 +8,7 @@ local ensure_installed = {
   -- "ruff-lsp",
 }
 
-local lsp_servers = require("utils.lsp").servers
+local lsp_servers = vim.tbl_keys(require("utils.lsp").servers or {})
 vim.list_extend(ensure_installed, lsp_servers)
 
 require("mason-tool-installer").setup {
@@ -20,4 +20,3 @@ require("mason-tool-installer").setup {
     ["mason-nvim-dap"] = true,
   },
 }
-
