@@ -1,5 +1,9 @@
 return {
   {
+    "sindrets/diffview.nvim",
+    lazy = false,
+  },
+  {
     "tpope/vim-fugitive",
     lazy = false,
   },

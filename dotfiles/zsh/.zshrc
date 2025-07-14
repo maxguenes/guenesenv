@@ -61,7 +61,7 @@ ENABLE_CORRECTION="true"
 ZSH_IGNORE_PATTERNS=(
  env
 )
-CORRECT_IGNORE_FILE=$(join_by "|" $ZSH_IGNORE_PATTERNS)
+CORRECT_IGNORE_FILE=$(join_by "|" "$ZSH_IGNORE_PATTERNS")
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
@@ -96,7 +96,7 @@ plugins=(
 )
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH"/oh-my-zsh.sh
 
 # User configuration
 
@@ -143,3 +143,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export AWSLOCAL_DEFAULT_REGION=us-east-2
+
+unalias gk

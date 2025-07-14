@@ -136,10 +136,12 @@ lsp.servers = {
   groovyls = {
     filetypes = { "groovy" },
   },
+  -- ts_ls = {},
+  ts_query_ls = {},
   -- tailwindcss = {},
   -- graphql = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs' } },
-  -- cssls = {},
+  html = { filetypes = { "html", "twig", "hbs" } },
+  cssls = {},
   -- ltex = {},
   -- texlab = {},
 }
