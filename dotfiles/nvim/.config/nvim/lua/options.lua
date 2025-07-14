@@ -5,6 +5,7 @@ require "nvchad.options"
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 --
+vim.g.VM_silent_exit = 1
 
 local function filterDuplicates(array)
   local uniqueArray = {}

@@ -1,5 +1,12 @@
 return {
   {
+    "radyz/telescope-gitsigns",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -15,4 +22,3 @@ return {
     end,
   },
 }
-

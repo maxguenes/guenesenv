@@ -66,6 +66,19 @@ wk.add {
   { "<leader>mr", "<Plug>(VM-Start-Regex-Search)", desc = "Start Regex Search" },
   { "<leader>mv", visual_cursors_with_delay, desc = "Visual Cursors", mode = "v" },
 }
+
+wk.add {
+  { "<leader>g", group = "Git", icon = "󰊢" },
+  { "<leader>gp", ":Gitsigns preview_hunk<CR>", desc = "Git preview hunk", mode = { "n", "v" } },
+  { "<leader>gb", ":Gitsigns blame<CR>", desc = "Git blame", mode = { "n", "v" } },
+  { "<leader>gB", ":Gitsigns blame_line<CR>", desc = "Git blame (line)", mode = { "n", "v" } },
+  {
+    "<leader>gT",
+    ":Gitsigns toggle_current_line_blame<CR>",
+    desc = "Git toggle current line blame",
+    mode = { "n", "v" },
+  },
+}
 -- function hello()
 --   print "Is it me you're looking for?"
 -- end
