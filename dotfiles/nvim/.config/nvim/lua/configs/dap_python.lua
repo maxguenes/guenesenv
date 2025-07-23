@@ -20,6 +20,7 @@ table.insert(configs, {
   name = "file",
   program = "${file}",
 })
+
 table.insert(configs, {
   type = "python",
   request = "launch",

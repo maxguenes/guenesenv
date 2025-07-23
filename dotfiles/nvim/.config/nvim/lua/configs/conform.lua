@@ -4,7 +4,15 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    python = { "isort", "black" },
+    -- python = { "isort", "black" },
+    python = {
+      -- To fix auto-fixable lint errors.
+      "ruff_fix",
+      -- To run the Ruff formatter.
+      "ruff_format",
+      -- To organize the imports.
+      "ruff_organize_imports",
+    },
     groovy = { "npm-groovy-lint" },
     bash = { "shfmt", "shellcheck" },
     zsh = { "shfmt", "shellcheck" },

@@ -1,56 +1,57 @@
-require("nvchad.configs.lspconfig").defaults()
+dofile(vim.g.base46_cache .. "lsp")
+require("nvchad.lsp").diagnostic_config()
 
--- read :h vim.lsp.config for changing options of lsp servers
+local map = vim.keymap.set
+local on_attach = function(_, bufnr)
+  local function opts(desc)
+    return { buffer = bufnr, desc = "LSP " .. desc }
+  end
 
--- local config = require("configs.lspconfig")
+  map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
+  map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
+  map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
+  map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
 
--- local on_attach = config.on_attach
--- local capabilities = config.capabilities
+  map("n", "<leader>wl", function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, opts "List workspace folders")
 
-local lspconfig = require "lspconfig"
+  map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
+  map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
+end
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    on_attach(_, args.buf)
+  end,
+})
 
--- lspconfig.ruff.setup({
---   init_options = {
---     settings = {
---       logLevel = 'debug',
---     }
---   }
--- })
+local on_init = function(client, _)
+  if client.supports_method "textDocument/semanticTokens" then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
+end
 
--- lspconfig.pyright.setup {
---   settings = {
---     pyright = {
---       -- Using Ruff's import organizer
---       disableOrganizeImports = true,
---     },
---     python = {
---       analysis = {
---         -- Ignore all files for analysis to exclusively use Ruff for linting
---         ignore = { '*' },
---       },
---     },
---   },
--- }
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 local servers = require("utils.lsp").servers
--- -- Ensure the servers and tools above are installed
--- require('mason').setup()
 
--- You can add other tools here that you want Mason to install
--- for you, so that they are available from within Neovim.
-
+vim.lsp.config("*", { capabilities = capabilities, on_init = on_init })
+for server, cfg in pairs(servers) do
+  vim.lsp.config(server, cfg)
+  vim.lsp.enable(server)
+end
 require("mason-lspconfig").setup {
-  handlers = {
-    function(server_name)
-      local server = servers[server_name] or {}
-      -- This handles overriding only values explicitly passed
-      -- by the server configuration above. Useful when disabling
-      -- certain features of an LSP (for example, turning off formatting for tsserver)
-      server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-      lspconfig[server_name].setup(server)
-    end,
-  },
+  -- handlers = {
+  --   function(server_name)
+  --     local server_config = servers[server_name] or {}
+  --
+  --     -- server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+  --
+  --     -- lspconfig[server_name].setup(server)
+  --     -- print(server_name)
+  --     -- print(server_config)
+  --     vim.lsp.config(server_name, server_config)
+  --     vim.lsp.enable(server_name)
+  --   end,
+  -- },
 }
