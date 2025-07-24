@@ -1,0 +1,7 @@
+theme = DimmedMonokai
+font-family = UbuntuMono Nerd Font Mono
+font-size = 14
+background-opacity = 0.9
+gtk-titlebar = false
+window-save-state=default
+window-theme=auto
