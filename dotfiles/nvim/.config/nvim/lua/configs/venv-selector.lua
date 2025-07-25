@@ -4,6 +4,7 @@ require("venv-selector").setup {
   dap_enabled = true,
   auto_refresh = false,
   stay_on_this_version = true,
+  notify_user_on_activate = true,
 }
 
 vim.api.nvim_create_autocmd("VimEnter", {
