@@ -1,9 +1,9 @@
 return {
-    {
+  {
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
-      "jay-babu/mason-nvim-dap.nvim"
+      "jay-babu/mason-nvim-dap.nvim",
     },
     config = function()
       local dap = require "dap"
@@ -126,9 +126,6 @@ return {
       "nvim-telescope/telescope.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("telescope").load_extension "dap"
-    end,
     keys = {
       {
         mode = { "n", "v" },
@@ -145,3 +142,4 @@ return {
     },
   },
 }
+

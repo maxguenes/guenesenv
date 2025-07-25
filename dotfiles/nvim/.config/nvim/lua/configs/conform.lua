@@ -1,5 +1,4 @@
 local options = {
-  log_level = vim.log.levels.DEBUG,
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
@@ -14,23 +13,6 @@ local options = {
     zsh = { "shfmt", "shellcheck" },
     sh = { "shfmt", "shellcheck" },
   },
-
-  formatters = {
-    black = {
-      prepend_args = {
-        "--fast",
-        "--line-length",
-        "120",
-      },
-    },
-    isort = {
-      prepend_args = {
-        "--profile",
-        "black",
-      },
-    },
-  },
-
   format_on_save = {
     timeout_ms = 500,
     lsp_fallback = true,
