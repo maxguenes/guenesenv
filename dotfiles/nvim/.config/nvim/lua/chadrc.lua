@@ -1,4 +1,5 @@
 local statusline = require "utils.statusline"
+
 -- This file needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :(
@@ -11,6 +12,9 @@ M.base46 = {
   transparency = false,
   integrations = { "dap" },
   hl_override = {
+    St_venv_icon = { fg = "one_bg", bg = "red" },
+    St_venv_text = { fg = "white", bg = "lightbg" },
+    St_venv_sep = { fg = "red", bg = "statusline_bg" },
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },

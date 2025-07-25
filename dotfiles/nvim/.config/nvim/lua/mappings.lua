@@ -5,6 +5,9 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local wk = require "which-key"
 
+-- Disable the spacebar key's default behavior in Normal and Visual modes
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 

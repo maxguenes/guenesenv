@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     config = function()
       require("nvim-treesitter.configs").setup {
         ensure_installed = {
@@ -12,6 +13,9 @@ return {
           "css",
           "python",
           "groovy",
+          "typescript",
+          "javascript",
+          "tsx",
         },
         auto_install = false,
         highlight = { enable = true, additional_vim_regex_highlighting = false },

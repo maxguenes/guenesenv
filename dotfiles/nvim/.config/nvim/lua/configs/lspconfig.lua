@@ -9,6 +9,7 @@ local on_attach = function(_, bufnr)
 
   require("lsp_signature").on_attach({
     bind = true,
+    hint_prefix = " ",
     handler_opts = {
       border = "rounded",
     },

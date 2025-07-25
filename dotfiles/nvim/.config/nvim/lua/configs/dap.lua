@@ -1,7 +1,7 @@
 dofile(vim.g.base46_cache .. "dap")
 
-local dap = require "dap"
-dap.setup()
+-- local dap = require "dap"
+-- dap.setup()
 
 -- dap.configurations.python = {
 --   {
