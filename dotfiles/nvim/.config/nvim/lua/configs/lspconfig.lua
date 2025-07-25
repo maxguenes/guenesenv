@@ -1,11 +1,18 @@
 dofile(vim.g.base46_cache .. "lsp")
 require("nvchad.lsp").diagnostic_config()
-
 local map = vim.keymap.set
+
 local on_attach = function(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
+
+  require("lsp_signature").on_attach({
+    bind = true,
+    handler_opts = {
+      border = "rounded",
+    },
+  }, bufnr)
 
   map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
   map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
@@ -19,6 +26,7 @@ local on_attach = function(_, bufnr)
   map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
   map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
 end
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     on_attach(_, args.buf)
