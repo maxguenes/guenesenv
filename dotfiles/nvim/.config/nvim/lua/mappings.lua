@@ -111,8 +111,8 @@ if gitsigns then
     { "<leader>gq", gitsigns.setqflist, mode = "n" },
 
     -- Toggles
-    { "<leader>tb", gitsigns.toggle_current_line_blame, mode = "n" },
-    { "<leader>tw", gitsigns.toggle_word_diff, mode = "n" },
+    { "<leader>gtb", gitsigns.toggle_current_line_blame, mode = "n" },
+    { "<leader>gtw", gitsigns.toggle_word_diff, mode = "n" },
   }
 
   -- Navigation
