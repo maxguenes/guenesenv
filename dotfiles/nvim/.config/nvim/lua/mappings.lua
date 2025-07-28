@@ -50,19 +50,88 @@ map("n", "<M-K>", ":m .-2<CR>==") -- move line down(n)
 map("v", "<M-J>", ":m '>+1<CR>gv=gv") -- move line up(v)
 map("v", "<M-K>", ":m '<-2<CR>gv=gv") -- move line down(v)
 
+-- Git
 wk.add {
-  { "<leader>g", group = "Git", icon = "󰊢" },
-  { "<leader>gp", ":Gitsigns preview_hunk<CR>", desc = "Git preview hunk", mode = { "n", "v" } },
-  { "<leader>gb", ":Gitsigns blame<CR>", desc = "Git blame", mode = { "n", "v" } },
-  { "<leader>gB", ":Gitsigns blame_line<CR>", desc = "Git blame (line)", mode = { "n", "v" } },
-  {
-    "<leader>gT",
-    ":Gitsigns toggle_current_line_blame<CR>",
-    desc = "Git toggle current line blame",
-    mode = { "n", "v" },
-  },
+  { "<leader>g", group = "Git", icon = "" },
+  { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 }
--- function hello()
---   print "Is it me you're looking for?"
--- end
--- vim.keymap.set("n", "<M-j>", hello)
+
+local gitsigns = require "gitsigns"
+if gitsigns then
+  wk.add {
+    { "<leader>gs", gitsigns.stage_hunk, desc = "Stage Hunk", mode = { "n" } },
+    { "<leader>gr", gitsigns.reset_hunk, desc = "Reset Hunk", mode = { "n" } },
+    {
+      "<leader>gs",
+      function()
+        gitsigns.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+      end,
+      desc = "Stage Hunk (Visual)",
+      mode = { "v" },
+    },
+    {
+      "<leader>gr",
+      function()
+        gitsigns.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+      end,
+      desc = "Reset Hunk (Visual)",
+      mode = { "v" },
+    },
+    { "<leader>gS", gitsigns.stage_buffer, desc = "Stage Buffer", mode = { "n" } },
+    { "<leader>gR", gitsigns.reset_buffer, desc = "Reset Buffer", mode = { "n" } },
+    { "<leader>gp", gitsigns.preview_hunk, desc = "Preview Hunk", mode = { "n" } },
+    { "<leader>gi", gitsigns.preview_hunk_inline, desc = "Preview Hunk (Inline)", mode = { "n" } },
+    {
+      "<leader>gb",
+      function()
+        gitsigns.blame_line { full = true }
+      end,
+      desc = "Git Blame line",
+      mode = "n",
+    },
+
+    { "<leader>gd", gitsigns.diffthis, desc = "Git diff this", mode = "n" },
+
+    {
+      "<leader>gD",
+      function()
+        gitsigns.diffthis "~"
+      end,
+      desc = "Git diff this",
+      mode = "n",
+    },
+
+    {
+      "<leader>gQ",
+      function()
+        gitsigns.setqflist "all"
+      end,
+      mode = "n",
+    },
+    { "<leader>gq", gitsigns.setqflist, mode = "n" },
+
+    -- Toggles
+    { "<leader>tb", gitsigns.toggle_current_line_blame, mode = "n" },
+    { "<leader>tw", gitsigns.toggle_word_diff, mode = "n" },
+  }
+
+  -- Navigation
+  map("n", "]c", function()
+    if vim.wo.diff then
+      vim.cmd.normal { "]c", bang = true }
+    else
+      gitsigns.nav_hunk "next"
+    end
+  end)
+
+  map("n", "[c", function()
+    if vim.wo.diff then
+      vim.cmd.normal { "[c", bang = true }
+    else
+      gitsigns.nav_hunk "prev"
+    end
+  end)
+
+  -- Text object
+  map({ "o", "x" }, "ih", gitsigns.select_hunk)
+end
