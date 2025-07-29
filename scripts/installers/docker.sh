@@ -18,5 +18,5 @@ if ! which docker >/dev/null; then
   apt-get install --yes docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
   getent group docker || groupadd docker
-  usermod -aG docker $USER
+  usermod -aG docker "$USER"
 fi
