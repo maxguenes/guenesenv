@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Node ####"
 
 apt_get_packages=(

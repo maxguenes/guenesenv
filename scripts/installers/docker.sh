@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Docker ####"
 
 if ! which docker >/dev/null; then

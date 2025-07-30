@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Fastfetch ####"
 BASEDIR=$(dirname "$0")
 

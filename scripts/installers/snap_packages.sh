@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Snap Packages ####"
 
 snap_packages=(

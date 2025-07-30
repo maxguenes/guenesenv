@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Git Tools ####"
 
 BASEDIR=$(dirname "$0")

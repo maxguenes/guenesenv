@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Tmux ####"
 BASEDIR=$(dirname "$0")
 

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Ghostty ####"
 
 BASEDIR=$(dirname "$0")

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 echo "#### Installing Python ####"
 
 apt_get_packages=(
