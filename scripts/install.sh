@@ -23,7 +23,7 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
 
   apt-get update
   apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
-  apt-get install --yes "$apt_join_packages"
+  apt-get install --yes $apt_join_packages
   # pip install --user spotify-cli-linux awscli awscli-local
 
   for i in $(ls "$BASEDIR/installers" | grep ".sh"); do
