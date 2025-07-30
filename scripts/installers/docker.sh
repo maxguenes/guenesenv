@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "#### Installing docker ####"
+echo "#### Installing Docker ####"
 
 if ! which docker >/dev/null; then
   apt-get update

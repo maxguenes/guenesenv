@@ -1,9 +1,18 @@
 #!/bin/bash
+echo "#### Installing Tmux ####"
 BASEDIR=$(dirname "$0")
 
-echo "#### Installing Tmux ####"
+if ! which fastfetch >/dev/null; then
+  apt_get_packages=(
+    tmux
+  )
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
+  apt-get install --yes "$apt_join_packages"
 
-## After installactions, copy this guy for spotify tracking on statusline :)
-#cp "$BASEDIR/../others/tmux/status/spotify.conf"  ~/.tmux/plugins/tmux/status/spotify.conf
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  ## After installactions, copy this guy for spotify tracking on statusline :)
+  #cp "$BASEDIR/../others/tmux/status/spotify.conf"  ~/.tmux/plugins/tmux/status/spotify.conf
+fi
+
