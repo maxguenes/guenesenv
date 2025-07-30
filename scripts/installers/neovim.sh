@@ -21,7 +21,7 @@ if [ ! -e "~/Development/neovim/bin/nvim" ]; then
   popd >/dev/null
 fi
 
-if which lazygit >/dev/null; then
+if ! which lazygit >/dev/null; then
   pushd ~/Downloads/ >/dev/null
 
   LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')

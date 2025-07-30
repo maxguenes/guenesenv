@@ -2,7 +2,7 @@
 echo "#### Installing Tmux ####"
 BASEDIR=$(dirname "$0")
 
-if ! which fastfetch >/dev/null; then
+if ! which tmux >/dev/null; then
   apt_get_packages=(
     tmux
   )
@@ -15,4 +15,3 @@ if ! which fastfetch >/dev/null; then
   ## After installactions, copy this guy for spotify tracking on statusline :)
   #cp "$BASEDIR/../others/tmux/status/spotify.conf"  ~/.tmux/plugins/tmux/status/spotify.conf
 fi
-
