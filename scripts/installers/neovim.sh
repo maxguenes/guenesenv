@@ -11,7 +11,7 @@ apt_get_packages=(
 )
 
 apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
-apt-get install --yes "$apt_join_packages"
+sudo apt-get install --yes $apt_join_packages
 
 if [ ! -e "~/Development/neovim/bin/nvim" ]; then
   mkdir -p ~/Development/neovim/
