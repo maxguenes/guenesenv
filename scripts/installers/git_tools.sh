@@ -16,7 +16,7 @@ git config --global merge.conflictStyle zdiff3
 
 if ! which gitkraken >/dev/null; then
   wget "https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb"
-  dpkg -i gitkraken-amd64.deb
+  sudo dpkg -i gitkraken-amd64.deb
   rm gitkraken-amd64.deb
-  snap install gitkraken-cli
+  sudo snap install gitkraken-cli
 fi

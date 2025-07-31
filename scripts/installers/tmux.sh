@@ -10,7 +10,7 @@ if ! which tmux >/dev/null; then
   )
 
   apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
-  apt-get install --yes "$apt_join_packages"
+  sudo apt-get install --yes $apt_join_packages
 
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
