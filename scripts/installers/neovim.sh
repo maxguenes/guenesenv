@@ -14,13 +14,11 @@ apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
 sudo apt-get install --yes $apt_join_packages
 
 if [ ! -e "~/Development/neovim/bin/nvim" ]; then
-  mkdir -p ~/Development/neovim/
-  pushd ~/Development/neovim/ >/dev/null
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-  tar -C ~/Development/neovim -xzf nvim-linux-x86_64.tar.gz
-  rm nvim-linux-x86_64.tar.gz
-
-  popd >/dev/null
+  tar -C ~/Development -xzf nvim-linux-x86_64.tar.gz
+  mv ~/Development/nvim-linux-x86_64 ~/Development/neovim
+  ln -s ~/Development/neovim/bin/nvim ~/.local/bin/nvim
+  rm nvim-linux-x86_64.tar.gz*
 fi
 
 if ! which lazygit >/dev/null; then
