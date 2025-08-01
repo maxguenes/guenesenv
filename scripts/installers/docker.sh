@@ -18,7 +18,7 @@ if ! which docker >/dev/null; then
   sudo apt-get update
 
   sudo apt-get install --yes docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
+  myuser=$USER
   sudo getent group docker || groupadd docker
-  sudo usermod -aG docker "$USER"
+  sudo usermod -aG docker "$myuser"
 fi
