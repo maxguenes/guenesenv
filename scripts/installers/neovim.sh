@@ -31,8 +31,8 @@ if ! which lazygit >/dev/null; then
   tar xf lazygit.tar.gz lazygit
   sudo install lazygit -D -t /usr/local/bin/
 
-  rm lazygit
-  rm lazygit.tar.gz
+  rm lazygit.tar.gz*
+  rm lazygit*
 
   popd >/dev/null
 fi

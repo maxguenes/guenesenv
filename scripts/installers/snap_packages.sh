@@ -10,4 +10,4 @@ snap_packages=(
 )
 
 snap_join_packages=$(printf " %s" "${snap_packages[@]}")
-snap install $snap_join_packages
+sudo snap install $snap_join_packages

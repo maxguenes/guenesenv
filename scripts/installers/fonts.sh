@@ -18,7 +18,7 @@ for font_zip in ../others/fonts/*.zip; do
   mkdir -p $FONTS_TARGET_DIR/$filename
 
   echo "Installing $font_zip at $FONTS_TARGET_DIR/$filename"
-  unzip "$font_zip" -d "$FONTS_TARGET_DIR/$filename"
+  unzip -o "$font_zip" -d "$FONTS_TARGET_DIR/$filename"
 done
 
 fc-cache -fv

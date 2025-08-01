@@ -28,8 +28,10 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
 
   for i in $(ls "$BASEDIR/installers" | grep ".sh"); do
     echo "Running $i"
-    source "$BASEDIR/installers/$i"
+    bash "$BASEDIR/installers/$i"
   done
+
+  echo "Done installing"
 
 else
   echo "No scripts prepared for $DISTRO"
