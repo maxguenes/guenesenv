@@ -1,6 +1,8 @@
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
+dofile(vim.g.base46_cache .. "lsp")
+dofile(vim.g.base46_cache .. "dap")
 
 require "nvchad.options"
 

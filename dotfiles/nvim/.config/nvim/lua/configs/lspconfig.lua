@@ -1,4 +1,3 @@
-dofile(vim.g.base46_cache .. "lsp")
 require("nvchad.lsp").diagnostic_config()
 local map = vim.keymap.set
 
