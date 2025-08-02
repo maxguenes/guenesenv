@@ -15,35 +15,129 @@
       "2": "green"
     }
   },
+  "display": {
+    "color": {
+      "title": "cyan"
+    },
+    "hideCursor": false,
+    "separator": "   "
+  },
   "modules": [
     "title",
     "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    {
+      "type": "host",
+      "keyColor": "red",
+      "key": "  PC"
+    },
+    {
+      "type": "board",
+      "keyColor": "red",
+      "key": "  ├"
+    },
+    {
+      "type": "CPU",
+      "keyColor": "red",
+      "key": "  ├"
+    },
+    {
+      "type": "gpu",
+      "keyColor": "red",
+      "detectionMethod": "vulkan",
+      "key": "  ├"
+    },
+    {
+      "type": "display",
+      "keyColor": "red",
+      "key": "  ├"
+    },
+    {
+      "type": "memory",
+      "keyColor": "red",
+      "key": "  ╰"
+    },
+    {
+      "type": "battery",
+      "keyColor": "red",
+      "key": "  ╰"
+    },
     "break",
-    "colors"
+    {
+      "type": "os",
+      "keyColor": "green",
+      "key": " OS"
+    },
+    {
+      "type": "kernel",
+      "keyColor": "green",
+      "key": "  ├"
+    },
+    {
+      "type": "lm",
+      "keyColor": "green",
+      "key": "  ├󰍂"
+    },
+    {
+      "type": "shell",
+      "keyColor": "green",
+      "key": "  ├"
+    },
+    {
+      "type": "terminal",
+      "keyColor": "green",
+      "key": "  ├"
+    },
+    {
+      "type": "TerminalFont",
+      "keyColor": "green",
+      "key": "  ├"
+    },
+    {
+      "type": "Packages",
+      "keyColor": "green",
+      "key": "  ╰"
+    },
+    "break",
+    {
+      "type": "DE",
+      "keyColor": "yellow",
+      "key": " DE"
+    },
+    {
+      "type": "WM",
+      "keyColor": "yellow",
+      "key": "  ├"
+    },
+    {
+      "type": "WMTheme",
+      "keyColor": "yellow",
+      "key": "  ├"
+    },
+    {
+      "type": "Theme",
+      "keyColor": "yellow",
+      "key": "  ├"
+    },
+    {
+      "type": "Icons",
+      "keyColor": "yellow",
+      "key": "  ├"
+    },
+    {
+      "type": "Font",
+      "keyColor": "yellow",
+      "key": "  ├"
+    },
+    {
+      "type": "Cursor",
+      "keyColor": "yellow",
+      "key": "  ╰󰇀"
+    },
+    "break",
+    {
+      "type": "colors",
+      "paddingLeft": 3,
+      "symbol": "diamond"
+    }
   ]
 }
