@@ -1,5 +1,6 @@
-require("nvchad.lsp").diagnostic_config()
 local map = vim.keymap.set
+
+local preset = vim.g.nvmax_preset
 
 local on_attach = function(_, bufnr)
   local function opts(desc)
@@ -24,7 +25,10 @@ local on_attach = function(_, bufnr)
   end, opts "List workspace folders")
 
   map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
-  map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
+
+  if preset == "nvchad" then
+    map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
+  end
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -48,18 +52,5 @@ for server, cfg in pairs(servers) do
   vim.lsp.config(server, cfg)
   vim.lsp.enable(server)
 end
-require("mason-lspconfig").setup {
-  -- handlers = {
-  --   function(server_name)
-  --     local server_config = servers[server_name] or {}
-  --
-  --     -- server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-  --
-  --     -- lspconfig[server_name].setup(server)
-  --     -- print(server_name)
-  --     -- print(server_config)
-  --     vim.lsp.config(server_name, server_config)
-  --     vim.lsp.enable(server_name)
-  --   end,
-  -- },
-}
+
+require("mason-lspconfig").setup {}

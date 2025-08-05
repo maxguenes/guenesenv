@@ -1,4 +1,10 @@
-require "nvchad.mappings"
+local preset = vim.g.nvmax_preset
+
+if preset == "nvchad" then
+  require "nvchad.mappings"
+  vim.keymap.del("n", "<C-c>")
+  vim.keymap.del("n", "<C-s>")
+end
 
 -- add yours here
 
@@ -7,8 +13,6 @@ local wk = require "which-key"
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-vim.keymap.del("n", "<C-c>")
-vim.keymap.del("n", "<C-s>")
 
 map({ "n", "v", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 

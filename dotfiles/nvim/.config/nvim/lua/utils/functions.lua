@@ -15,8 +15,17 @@ function functions.dump_table(o)
   end
 end
 
-function functions.module_loaded(module_name)
-  return pcall(require, module_name)
+function functions.get_preset_options(plugin_name)
+  local ret = {}
+  local preset = vim.g.nvmax_preset
+  if preset == "nvchad" then
+    local configs = require("nvchad.configs." .. plugin_name)
+    if configs ~= nil then
+      ret = configs
+    end
+  end
+
+  return ret
 end
 
 return functions

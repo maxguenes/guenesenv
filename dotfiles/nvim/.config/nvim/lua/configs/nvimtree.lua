@@ -1,4 +1,7 @@
-local nvchad_configs = require "nvchad.configs.nvimtree"
+local utils_functions = require "utils.functions"
+
+local preset_options = utils_functions.get_preset_options "nvimtree"
+
 local configs = {
   filters = {
     custom = {
@@ -7,5 +10,5 @@ local configs = {
   },
 }
 
-local ret = vim.tbl_deep_extend("force", nvchad_configs, configs)
+local ret = vim.tbl_deep_extend("force", preset_options, configs)
 return ret

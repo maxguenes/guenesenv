@@ -1,4 +1,8 @@
-require "nvchad.autocmds"
+local preset = vim.g.nvmax_preset
+
+if preset == "nvchad" then
+  require "nvchad.autocmds"
+end
 
 local autocmd = vim.api.nvim_create_autocmd
 

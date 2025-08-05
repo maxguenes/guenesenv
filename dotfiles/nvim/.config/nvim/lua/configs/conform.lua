@@ -1,5 +1,4 @@
 require("conform").setup {
-  log_level = vim.log.levels.DEBUG,
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },

@@ -1,4 +1,7 @@
-local nvchad_opts = require "nvchad.configs.gitsigns"
+local utils_functions = require "utils.functions"
+
+local preset_config = utils_functions.get_preset_options "gitsigns"
+
 local opts = {
 
   current_line_blame = true,
@@ -17,4 +20,4 @@ local opts = {
   -- end,
 }
 
-require("gitsigns").setup(vim.tbl_deep_extend("force", nvchad_opts, opts))
+require("gitsigns").setup(vim.tbl_deep_extend("force", preset_config, opts))

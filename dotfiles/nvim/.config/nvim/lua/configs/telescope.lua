@@ -1,8 +1,10 @@
 local telescope = require "telescope"
+local utils_functions = require "utils.functions"
 
-local telescopeParams = require "nvchad.configs.telescope"
+local preset_options = utils_functions.get_preset_options "telescope"
+
 -- first setup telescope
-telescope.setup(telescopeParams)
+telescope.setup(preset_options)
 
 -- then load the extension
 telescope.load_extension "live_grep_args"

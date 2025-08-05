@@ -5,7 +5,7 @@ return {
     -- priority = 1000,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
-      "williamboman/mason.nvim",
+      { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       "jay-babu/mason-nvim-dap.nvim",
     },
