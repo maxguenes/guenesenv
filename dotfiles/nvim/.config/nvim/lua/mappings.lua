@@ -7,6 +7,10 @@ local wk = require "which-key"
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.keymap.del("n", "<C-c>")
+vim.keymap.del("n", "<C-s>")
+
+map({ "n", "v", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")

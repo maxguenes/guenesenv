@@ -7,7 +7,7 @@ lsp.servers = {
     filetypes = { "python" },
     settings = {},
   },
-  pyright = {
+  pylsp = {
     settings = {
       pyright = {
         disableOrganizeImports = true,
