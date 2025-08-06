@@ -1,18 +1,8 @@
 if [ ! -v USE_OH_MY_ZSH ];then
     USE_OH_MY_ZSH=false
-    VARIABLES_TO_CHECK=(
-      "GUAKE_TAB_UUID"
-      "GHOSTTY_BIN_DIR"
-      "TMUX"
-    )
-
-    for VARIABLE_NAME in "${VARIABLES_TO_CHECK[@]}"; do
-      if [ -v "$VARIABLE_NAME" ]; then
-        USE_OH_MY_ZSH=true
-        break
-      fi
-    done
-
+    case $- in
+      *i*) USE_OH_MY_ZSH=true;;
+    esac
 fi
 
 if $USE_OH_MY_ZSH ; then
