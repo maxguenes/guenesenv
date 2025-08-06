@@ -64,12 +64,13 @@ if $USE_OH_MY_ZSH ; then
   }
 
   # Uncomment the following line to enable command auto-correction.
-  ENABLE_CORRECTION="true"
+  # ENABLE_CORRECTION="true"
 
-  ZSH_IGNORE_PATTERNS=(
-  env
-  )
-  CORRECT_IGNORE_FILE=$(join_by "|" "$ZSH_IGNORE_PATTERNS")
+  # ZSH_IGNORE_PATTERNS=(
+  #   "env"
+  #   ".env"
+  # )
+  # CORRECT_IGNORE_FILE=$(join_by "|" "$ZSH_IGNORE_PATTERNS")
   # Uncomment the following line to display red dots whilst waiting for completion.
   # You can also set it to another string to have that shown instead of the default red dots.
   # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
