@@ -7,8 +7,6 @@ tmux has-session -t $SESSION_NAME 2>/dev/null
 if [ $? != 0 ]; then
     # Set up your session
     tmux -u new-session -d -s "$SESSION_NAME" -n "Home" -c ~
-    tmux -u new-window -n btop -c ~ btop
-    tmux -u new-window -n Spotify -c ~ spotifycli
     
     tmux source ~/.tmux.conf
 

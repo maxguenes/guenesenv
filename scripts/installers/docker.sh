@@ -22,3 +22,7 @@ if ! which docker >/dev/null; then
   sudo getent group docker || groupadd docker
   sudo usermod -aG docker "$myuser"
 fi
+
+if ! which lazydocker >/dev/null; then
+  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+fi
