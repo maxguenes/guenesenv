@@ -44,15 +44,17 @@ require("conform").setup {
 
 vim.api.nvim_create_user_command("FormatDisable", function(args)
   if args.bang then
-    -- FormatDisable! will disable formatting just for this buffer
+    -- :FormatDisable! disables autoformat for this buffer only
     vim.b.disable_autoformat = true
   else
+    -- :FormatDisable disables autoformat globally
     vim.g.disable_autoformat = true
   end
 end, {
   desc = "Disable autoformat-on-save",
-  bang = true,
+  bang = true, -- allows the ! variant
 })
+
 vim.api.nvim_create_user_command("FormatEnable", function()
   vim.b.disable_autoformat = false
   vim.g.disable_autoformat = false

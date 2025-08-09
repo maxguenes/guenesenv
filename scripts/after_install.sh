@@ -19,5 +19,6 @@ nvm install 22
 
 pyenv install 3.12
 pyenv global 3.12
+git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 
 pip install --user spotify-cli-linux awscli awscli-local

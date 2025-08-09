@@ -3,6 +3,8 @@ return {
     "folke/trouble.nvim",
     opts = {
       auto_preview = false,
+      -- auto_refresh = false,
+      follow = false,
     },
     cmd = "Trouble",
     keys = {

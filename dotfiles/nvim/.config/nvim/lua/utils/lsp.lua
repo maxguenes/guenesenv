@@ -5,9 +5,16 @@ lsp.servers = {
   lua_ls = {},
   ruff = {
     filetypes = { "python" },
-    settings = {},
+    settings = {
+      args = {
+        "--line-length=120",
+      },
+    },
+    format = {
+      lineLength = 120, -- This setting is specific to ruff-lsp and its formatting
+    },
   },
-  pylsp = {
+  pyright = {
     settings = {
       pyright = {
         disableOrganizeImports = true,
