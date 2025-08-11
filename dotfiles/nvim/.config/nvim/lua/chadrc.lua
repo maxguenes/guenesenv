@@ -9,7 +9,7 @@ local M = {}
 
 M.base46 = {
   theme = "palenight",
-  transparency = false,
+  transparency = true,
   integrations = { "dap" },
   hl_override = {
     St_venv_icon = { fg = "one_bg", bg = "red" },
