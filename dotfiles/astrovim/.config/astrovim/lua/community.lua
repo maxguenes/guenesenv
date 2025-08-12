@@ -39,4 +39,7 @@ return {
 
   -- Mappings & Keybindings
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+
+  -- Auto Session
+  { import = "astrocommunity.recipes.auto-session-restore" },
 }

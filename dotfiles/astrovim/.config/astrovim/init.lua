@@ -25,4 +25,7 @@ end
 
 require "lazy_setup"
 
-vim.schedule(function() require "polish" end)
+vim.schedule(function()
+  require "polish"
+  require "mappings"
+end)

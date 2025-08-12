@@ -6,7 +6,7 @@ return {
       "nvim-telescope/telescope.nvim",
       "mfussenegger/nvim-dap-python",
     },
-    config = function() require "config.venv-selector" end,
+    -- config = function() require "config.venv-selector" end,
     event = { "VeryLazy", "VimEnter" }, -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
