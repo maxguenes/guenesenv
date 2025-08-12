@@ -13,6 +13,7 @@ return {
         auto_save = true, -- Enables/disables auto saving session on exit
         auto_restore = true, -- Enables/disables auto restoring session on start
         auto_create = true, -- Enables/disables auto creating new session files. Can take a function that should return true/false if a new session file should be created or not
+        bypass_save_filetypes = { "neo-tree", "snacks_dashboard", "toggleterm" }, -- or whatever dashboard you use
         session_lens = {
           load_on_setup = true, -- Initialize on startup (requires Telescope)
           picker_opts = nil, -- Table passed to Telescope / Snacks to configure the picker. See below for more information

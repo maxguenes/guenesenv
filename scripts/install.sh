@@ -12,6 +12,7 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
 
   apt_get_packages=(
     btop
+    htop
     git
     curl
     openjdk-21-jdk
@@ -21,6 +22,7 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
     gcc
     build-essential
     net-tools
+    chafa
   )
 
   apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
