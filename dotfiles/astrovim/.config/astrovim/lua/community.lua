@@ -19,6 +19,9 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.programming-language-support.rest-nvim" },
 
+  -- Docker
+  { import = "astrocommunity.docker.lazydocker" },
+
   -- Code Runner
   { import = "astrocommunity.code-runner.executor-nvim" },
   { import = "astrocommunity.code-runner.overseer-nvim" },

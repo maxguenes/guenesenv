@@ -20,6 +20,7 @@ if [[ $DISTRO =~ "Ubuntu" ]]; then
     wget
     gcc
     build-essential
+    net-tools
   )
 
   apt_join_packages=$(printf " %s" "${apt_get_packages[@]}")
