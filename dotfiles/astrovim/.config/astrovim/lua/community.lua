@@ -44,5 +44,5 @@ return {
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
   -- Auto Session
-  { import = "astrocommunity.recipes.auto-session-restore" },
+  -- { import = "astrocommunity.recipes.auto-session-restore" },
 }
