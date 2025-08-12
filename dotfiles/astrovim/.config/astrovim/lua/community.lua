@@ -19,6 +19,9 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.programming-language-support.rest-nvim" },
 
+  -- DAP
+  { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
+
   -- Docker
   { import = "astrocommunity.docker.lazydocker" },
 
