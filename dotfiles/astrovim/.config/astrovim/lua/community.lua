@@ -41,7 +41,8 @@ return {
 
   -- Theme
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.colorscheme/palenight-nvim" },
+  { import = "astrocommunity.colorscheme.palenight-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
 
   -- Mappings & Keybindings
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
