@@ -49,10 +49,10 @@ return {
   { import = "astrocommunity.colorscheme.github-nvim-theme" },
   { import = "astrocommunity.recipes.cache-colorscheme" },
 
-  -- Mappings & Keybindings
+  -- Motion, Mappings & Keybindings
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
 
   -- StatusLine
-  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
 }

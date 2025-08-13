@@ -14,6 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 
 git config --global user.name "Max Guenes"
 git config --global user.email "maxguenes@gmail.com"
+git config --global core.editor "vim"
 
 nvm install 22
 
